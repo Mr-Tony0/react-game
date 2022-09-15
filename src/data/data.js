@@ -11,13 +11,23 @@ for(let i = 0; i<9; i++){
     }
     data.square.push(renderSquare);
 }
-
-export let clickSquare = (value, id) => {
-    let a = data.square.map((element) => {
-        if(id == element.id ){
-            element.content = value;
+let value = '0'
+export let clickSquare = (id) => {
+    let addValue = data.square.map((element) => {
+        
+        if(id === element.id && element.content === null ){
+            if(value === 'x'){
+                value ='0';
+                element.content = value;
+            }else{
+                value ='x';
+                element.content = value; 
+            }
+           
         }
+        return element;
     })
+    console.log(addValue);
     render(data);
 }
 export default data;

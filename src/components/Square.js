@@ -1,7 +1,7 @@
+import React from 'react';
 function Square(props){
     let currentState = () => {
-      
-       props.clickSquare('x', props.id);
+        props.clickSquare(props.id);
     }
     return(
         <div className="board__item">
